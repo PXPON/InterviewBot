@@ -1,0 +1,31 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "type": "resume",
+      "subType": "icebreaker",
+      "question": "Tell me about yourself.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "2",
+      "type": "icebreaker",
+      "question": "Why are you interested in this role?",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "3",
+      "type": "icebreaker",
+      "subType": "crisis_management",
+      "question": "Why are you interested in this role?",
+      "difficulty": "intermediate"
+    }
+  ],
+  "types": {
+    "behavioral": "Questions about past experiences and behavior",
+    "technical": "Questions testing technical knowledge and skills",
+    "situational": "Hypothetical scenarios to test problem-solving",
+    "resume": "Questions about the candidate's resume",
+    "icebreaker": "Questions to learn more about the candidate"
+  }
+}
