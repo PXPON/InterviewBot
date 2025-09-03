@@ -1,6 +1,7 @@
 import json
 import argparse
 import random
+import pyttsx3
 
 # For this code we want to go through each question and have 
 # a voice recite the question.
