@@ -28,11 +28,43 @@ with open(args.file, "r") as file:
 # Shuffle the questions to ensure random order
 random.shuffle(data['questions'])
 
+# Initialize camera
+cap = cv2.VideoCapture(0) # 0 for default camera
+
+if not cap.isOpened():
+    print("Error: Could not open video device.")
+    exit()
+
+# Get video properties
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = int(cap.get(cv2.CAP_PROP_FPS)) or 20 # Default to 20 FPS if camera doesn't report it
+
+# Define the codec and create VideoWriter object
+# For Linux, 'XVID' or 'MJPG' are common. 'MP4V' might also work if ffmpeg is installed.
+fourcc = cv2.VideoWriter_fourcc(*'XVID') # You might need to change this codec depending on your system
+out = cv2.VideoWriter('interview_recording.avi', fourcc, fps, (frame_width, frame_height))
+
+recording = True
+
 def iterate_through_questions(interview_question_list):
+    global recording
     for item in interview_question_list:
-        # Add your logic for voice recitation and recording here
-        # For now, we'll just print them
-        question = item['question']
+        # Read frame from camera for live display or processing
+        ret, frame = cap.read()
+        if ret:
+            # Write the frame to the output file
+            out.write(frame)
+
+            # Optional: Display the live camera feed (press 'q' to quit the display)
+            cv2.imshow('Live Feed', frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                recording = False # Set flag to stop recording
+                break
+        else:
+            print("Error: Could not read frame from camera.")
+            recording = False
+            break
 
         question = item['question']
         print(f"Question: {question}")
@@ -47,5 +79,10 @@ def iterate_through_questions(interview_question_list):
 
 # Assuming the 'questions' key holds the list of questions
 iterate_through_questions(data['questions'])
+
+# Release everything if job is finished
+cap.release()
+out.release()
+cv2.destroyAllWindows()
 
     
