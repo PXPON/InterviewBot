@@ -1,5 +1,6 @@
 import json
 import argparse
+import random
 
 # For this code we want to go through each question and have 
 # a voice recite the question.
@@ -22,6 +23,17 @@ args = parser.parse_args()
 with open(args.file, "r") as file:
     data = json.load(file)
 
+# Shuffle the questions to ensure random order
+random.shuffle(data['questions'])
+
 def iterate_through_questions(interview_question_list):
-    a = 1
+    for item in interview_question_list:
+        # Add your logic for voice recitation and recording here
+        # For now, we'll just print them
+        question = item['question']
+
+
+# Assuming the 'questions' key holds the list of questions
+iterate_through_questions(data['questions'])
+
     
