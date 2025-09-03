@@ -3,8 +3,9 @@ import json
 with open("../simple-interview-questions.json", "r") as file:
     data = json.load(file)
 
-# Prompt a user for a question
-new_question_string = input("Please enter a new interview question: ")
+print("This is an Interview Question Manager")
+print("Type Ctrl+C to exit and save all questions")
+print("-" * 50)
 
 # Prompt the user for the question type
 question_type = input("Please enter the question type (behavioral, technical, etc): ")
