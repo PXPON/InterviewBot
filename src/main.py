@@ -3,6 +3,7 @@ import argparse
 import random
 import os
 from gtts import gTTS
+import cv2
 
 # For this code we want to go through each question and have 
 # a voice recite the question.
