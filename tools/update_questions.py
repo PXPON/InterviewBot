@@ -7,13 +7,30 @@ print("This is an Interview Question Manager")
 print("Type Ctrl+C to exit and save all questions")
 print("-" * 50)
 
-# Prompt the user for the question type
-question_type = input("Please enter the question type (behavioral, technical, etc): ")
+# Putting in the loop
+try:
+    while True:
+        # Prompt a user for a question
+        new_question_string = input("Please enter a new interview question: ")
 
-# Get the last id in the file
-last_id = data["questions"][-1]["id"]
+        # Prompt the user for the question type
+        question_type = input("Please enter the question type (behavioral, technical, etc): ")
 
-# TODO: Add subtype and difficulty level fields
+        # Get the last id in the file
+        last_id = data["questions"][-1]["id"]
+
+        # TODO: Add subtype and difficulty level fields
+
+        new_question = {
+            "id": last_id + 1,
+            "type": question_type,
+            "question": new_question_string
+        }
+
+        data["questions"].append(new_question)
+
+except KeyboardInterrupt:
+    print("\nExiting the application...")
 
 new_question = {
     "id": last_id + 1,
