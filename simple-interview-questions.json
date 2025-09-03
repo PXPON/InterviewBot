@@ -19,6 +19,41 @@
       "subType": "crisis_management",
       "question": "Why are you interested in this role?",
       "difficulty": "intermediate"
+    },
+    {
+      "id": "4",
+      "type": "icebreaker",
+      "question": "Why are you interested in our company?"
+    },
+    {
+      "id": "5",
+      "type": "resume",
+      "question": "Why are you looking to leave your current position?"
+    },
+    {
+      "id": "6",
+      "type": "Behavioral",
+      "question": "Tell me about a time you worked on a team."
+    },
+    {
+      "id": "7",
+      "type": "Behaviroal",
+      "question": "Describe a time you had a conflict with a coworker. How did you resolve it?"
+    },
+    {
+      "id": "8",
+      "type": "Behavioral",
+      "question": "Have you ever worked with a difficult person? How did you handle it?"
+    },
+    {
+      "id": "9",
+      "type": "Behavioral",
+      "question": "Describe a difficult challenge or problem you faced at work and how you handled it."
+    },
+    {
+      "id": "10",
+      "type": "Situational",
+      "question": "Describe a time you made a mistake. What did you do and what did you learn?"
     }
   ],
   "types": {
