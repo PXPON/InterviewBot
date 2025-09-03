@@ -32,12 +32,5 @@ try:
 except KeyboardInterrupt:
     print("\nExiting the application...")
 
-new_question = {
-    "id": last_id + 1,
-    "type": question_type,
-    "question": new_question_string
-}
 
-data["questions"].append(new_question)
 
-# How can we get this file to loop?
