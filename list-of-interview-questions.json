@@ -1,0 +1,159 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "type": "resume",
+      "subType": "icebreaker",
+      "question": "Tell me about yourself.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "2",
+      "type": "icebreaker",
+      "question": "Why are you interested in this role?",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "4",
+      "type": "icebreaker",
+      "question": "Why are you interested in our company?"
+    },
+    {
+      "id": "5",
+      "type": "resume",
+      "question": "Why are you looking to leave your current position?"
+    },
+    {
+      "id": "6",
+      "type": "Behavioral",
+      "question": "Tell me about a time you worked on a team."
+    },
+    {
+      "id": "7",
+      "type": "Behaviroal",
+      "question": "Describe a time you had a conflict with a coworker. How did you resolve it?"
+    },
+    {
+      "id": "8",
+      "type": "Behavioral",
+      "question": "Have you ever worked with a difficult person? How did you handle it?"
+    },
+    {
+      "id": "9",
+      "type": "Behavioral",
+      "question": "Describe a difficult challenge or problem you faced at work and how you handled it."
+    },
+    {
+      "id": "10",
+      "type": "Situational",
+      "question": "Describe a time you made a mistake. What did you do and what did you learn?"
+    },
+    {
+      "id": "11",
+      "type": "resume",
+      "question": "Walk me through your resume."
+    },
+    {
+      "id": "12",
+      "type": "Behavioral",
+      "question": "Tell me about a time when priorities changed suddenly. What did you do?"
+    },
+    {
+      "id": "13",
+      "type": "Behavioral",
+      "question": "Tell me about a time you took the lead on a project."
+    },
+    {
+      "id": "14",
+      "type": "Behavioral",
+      "question": "Describe a time you went above and beyond your job responsibilities."
+    },
+    {
+      "id": "15",
+      "type": "Behavioral",
+      "question": "Have you ever had to motivate others? How did you do it?"
+    },
+    {
+      "id": "16",
+      "type": "resume",
+      "question": "What is your greatest professional accomplishment?"
+    },
+    {
+      "id": "17",
+      "type": "Behavioral",
+      "question": "Tell me about a time you failed. What did you learn from it?"
+    },
+    {
+      "id": "18",
+      "type": "Situational",
+      "question": "What would you do if you disagreed with a decision your manager made?"
+    },
+    {
+      "id": "19",
+      "type": "Situational",
+      "question": "How would you handle a customer who is angry and upset?"
+    },
+    {
+      "id": "20",
+      "type": "Situational",
+      "question": "If you were given a project with an impossible deadline, what would you do?"
+    },
+    {
+      "id": "21",
+      "type": "Situational",
+      "question": "How would you handle a coworker who wasn't pulling their weight on a team project?"
+    },
+    {
+      "id": "22",
+      "type": "icebreaker",
+      "question": "What are your greatest strengths?"
+    },
+    {
+      "id": "23",
+      "type": "icebreaker",
+      "question": "What is your greatest weakness?"
+    },
+    {
+      "id": "24",
+      "type": "Behavioral",
+      "question": "How do you handle stress or pressure?"
+    },
+    {
+      "id": "25",
+      "type": "Behavioral",
+      "question": "How do you stay organized?"
+    },
+    {
+      "id": "26",
+      "type": "resume",
+      "question": "What software or tools are you familiar with?"
+    },
+    {
+      "id": "27",
+      "type": "icebreaker",
+      "question": "Where do you see yourself in 5 years?"
+    },
+    {
+      "id": "28",
+      "type": "icebreaker",
+      "question": "What are your long-term career goals?"
+    },
+    {
+      "id": "29",
+      "type": "icebreaker",
+      "question": "What motivates you?"
+    },
+    {
+      "id": "30",
+      "type": "icebreaker",
+      "question": "What are you looking for in a new position?"
+    }
+  ],
+  "types": {
+    "behavioral": "Questions about past experiences and behavior",
+    "technical": "Questions testing technical knowledge and skills",
+    "situational": "Hypothetical scenarios to test problem-solving",
+    "resume": "Questions about the candidate's resume",
+    "icebreaker": "Questions to learn more about the candidate"
+  }
+}
