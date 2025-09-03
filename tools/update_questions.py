@@ -36,5 +36,10 @@ try:
 except KeyboardInterrupt:
     print("\nExiting the application...")
 
+# Append the last question
 
+# Save thew new questions to the file
+with open("../simple-interview-questions.json", "w") as file:
+    json.dump(data, file, indent=2)
 
+print("The file simple-interview-questions.json has been updated.")
