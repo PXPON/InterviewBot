@@ -1,7 +1,8 @@
 import json
 import argparse
 import random
-import pyttsx3
+import os
+from gtts import gTTS
 
 # For this code we want to go through each question and have 
 # a voice recite the question.
@@ -33,6 +34,16 @@ def iterate_through_questions(interview_question_list):
         # For now, we'll just print them
         question = item['question']
 
+        question = item['question']
+        print(f"Question: {question}")
+        # Use gTTS to speak the question (e.g., 'en-uk' for British English)
+        tts = gTTS(text=question, lang='en-uk') # You can change 'en-uk' to other language codes like 'en' (US English), 'es' (Spanish), 'fr' (French), etc.
+        audio_file = "temp_question.mp3"
+        tts.save(audio_file)
+        os.system(f"mpg123 {audio_file}") # For Linux, you might need to install mpg123: sudo apt-get install mpg123
+        # For Windows: os.system(f"start {audio_file}")
+        # For macOS: os.system(f"afplay {audio_file}")
+        os.remove(audio_file)
 
 # Assuming the 'questions' key holds the list of questions
 iterate_through_questions(data['questions'])
