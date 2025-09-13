@@ -1,0 +1,492 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Interview Questions Schema",
+  "description": "Schema for defining interview questions with types and sub-types for the InterviewBot application",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "example": "1.0.0"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this question set was created"
+        },
+        "lastModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this question set was last modified"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author or creator of the question set"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags for categorizing the question set"
+        }
+      },
+      "required": ["created", "author"]
+    },
+    "questions": {
+      "type": "array",
+      "description": "Array of interview questions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the question",
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          },
+          "questionType": {
+            "type": "string",
+            "enum": [
+              "behavioral",
+              "technical",
+              "situational",
+              "case_study",
+              "brain_teaser",
+              "cultural_fit",
+              "leadership",
+              "problem_solving",
+              "communication",
+              "stress_test"
+            ],
+            "description": "Primary category of the question"
+          },
+          "subType": {
+            "type": "string",
+            "description": "Specific sub-category within the question type"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["beginner", "intermediate", "advanced", "expert"],
+            "description": "Difficulty level of the question"
+          },
+          "industry": {
+            "type": "string",
+            "description": "Industry or field this question is most relevant to"
+          },
+          "role": {
+            "type": "string",
+            "description": "Job role or position this question targets"
+          },
+          "experienceLevel": {
+            "type": "string",
+            "enum": ["entry", "mid", "senior", "executive"],
+            "description": "Experience level this question is designed for"
+          },
+          "questionText": {
+            "type": "string",
+            "description": "The actual question text",
+            "minLength": 10
+          },
+          "context": {
+            "type": "string",
+            "description": "Additional context or background information"
+          },
+          "expectedDuration": {
+            "type": "integer",
+            "description": "Expected answer duration in seconds",
+            "minimum": 30,
+            "maximum": 600
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Key terms or concepts the answer should cover"
+          },
+          "evaluationCriteria": {
+            "type": "object",
+            "properties": {
+              "content": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Content points that should be addressed"
+              },
+              "structure": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Structural elements to evaluate (e.g., STAR method)"
+              },
+              "communication": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Communication skills to assess"
+              },
+              "bodyLanguage": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Body language and non-verbal cues to evaluate"
+              }
+            },
+            "required": ["content"]
+          },
+          "sampleAnswers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "quality": {
+                  "type": "string",
+                  "enum": ["poor", "fair", "good", "excellent"],
+                  "description": "Quality rating of this sample answer"
+                },
+                "answer": {
+                  "type": "string",
+                  "description": "Sample answer text"
+                },
+                "analysis": {
+                  "type": "string",
+                  "description": "Analysis of why this answer is good/bad"
+                }
+              },
+              "required": ["quality", "answer"]
+            },
+            "description": "Sample answers for reference and training"
+          },
+          "followUpQuestions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Potential follow-up questions the interviewer might ask"
+          },
+          "redFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Common mistakes or red flags to watch out for"
+          },
+          "tips": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tips for answering this question effectively"
+          },
+          "aiEvaluationPrompts": {
+            "type": "object",
+            "properties": {
+              "contentAnalysis": {
+                "type": "string",
+                "description": "Prompt for AI to analyze answer content"
+              },
+              "bodyLanguageAnalysis": {
+                "type": "string",
+                "description": "Prompt for AI to analyze body language and facial expressions"
+              },
+              "overallAssessment": {
+                "type": "string",
+                "description": "Prompt for AI to provide overall assessment"
+              }
+            },
+            "description": "Specific prompts for AI evaluation of video responses"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Additional tags for categorization and search"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether this question is currently active for use",
+            "default": true
+          }
+        },
+        "required": ["id", "questionType", "questionText", "difficulty", "evaluationCriteria"]
+      }
+    },
+    "questionTypes": {
+      "type": "object",
+      "description": "Detailed definitions of question types and their sub-types",
+      "properties": {
+        "behavioral": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions about past behavior and experiences"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "leadership_experience",
+                "conflict_resolution",
+                "teamwork",
+                "achievement",
+                "failure_handling",
+                "change_management",
+                "customer_service",
+                "innovation",
+                "time_management",
+                "stress_management"
+              ]
+            },
+            "framework": {
+              "type": "string",
+              "enum": ["STAR", "CAR", "SOAR"],
+              "description": "Recommended framework for answering"
+            }
+          }
+        },
+        "technical": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions testing technical knowledge and skills"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "programming",
+                "system_design",
+                "algorithms",
+                "databases",
+                "networking",
+                "security",
+                "cloud_computing",
+                "devops",
+                "data_science",
+                "machine_learning"
+              ]
+            }
+          }
+        },
+        "situational": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Hypothetical scenarios to test problem-solving"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "crisis_management",
+                "resource_allocation",
+                "priority_setting",
+                "stakeholder_management",
+                "ethical_dilemmas",
+                "performance_issues",
+                "budget_constraints",
+                "deadline_pressure"
+              ]
+            }
+          }
+        },
+        "case_study": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Complex business or technical scenarios to analyze"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "business_strategy",
+                "market_analysis",
+                "product_development",
+                "financial_analysis",
+                "operational_efficiency",
+                "competitive_analysis",
+                "risk_assessment",
+                "growth_strategy"
+              ]
+            }
+          }
+        },
+        "brain_teaser": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Logic puzzles and creative thinking problems"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "logic_puzzles",
+                "math_problems",
+                "creative_thinking",
+                "lateral_thinking",
+                "pattern_recognition",
+                "spatial_reasoning",
+                "word_problems",
+                "sequence_analysis"
+              ]
+            }
+          }
+        },
+        "cultural_fit": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions to assess alignment with company values"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "values_alignment",
+                "work_style",
+                "motivation",
+                "career_goals",
+                "work_life_balance",
+                "company_culture",
+                "team_dynamics",
+                "growth_mindset"
+              ]
+            }
+          }
+        },
+        "leadership": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions specifically about leadership abilities"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "team_building",
+                "mentoring",
+                "decision_making",
+                "vision_setting",
+                "influence",
+                "delegation",
+                "crisis_leadership",
+                "change_leadership"
+              ]
+            }
+          }
+        },
+        "problem_solving": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions testing analytical and problem-solving skills"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "root_cause_analysis",
+                "data_analysis",
+                "process_improvement",
+                "optimization",
+                "troubleshooting",
+                "creative_solutions",
+                "risk_mitigation",
+                "quality_assurance"
+              ]
+            }
+          }
+        },
+        "communication": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions testing communication and presentation skills"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "presentation_skills",
+                "written_communication",
+                "active_listening",
+                "persuasion",
+                "negotiation",
+                "public_speaking",
+                "cross_cultural_communication",
+                "technical_writing"
+              ]
+            }
+          }
+        },
+        "stress_test": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Questions designed to test composure under pressure"
+            },
+            "subTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "enum": [
+                "pressure_handling",
+                "rapid_thinking",
+                "emotional_control",
+                "adaptability",
+                "resilience",
+                "grace_under_fire",
+                "quick_decision_making",
+                "maintaining_focus"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["version", "questions", "questionTypes"],
+  "additionalProperties": false
+}
+

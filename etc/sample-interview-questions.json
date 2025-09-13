@@ -1,0 +1,355 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created": "2024-01-15T10:00:00Z",
+    "lastModified": "2024-01-15T10:00:00Z",
+    "author": "InterviewBot Team",
+    "tags": ["software-engineering", "general", "practice"]
+  },
+  "questions": [
+    {
+      "id": "behavioral_leadership_001",
+      "questionType": "behavioral",
+      "subType": "leadership_experience",
+      "difficulty": "intermediate",
+      "industry": "technology",
+      "role": "software engineer",
+      "experienceLevel": "mid",
+      "questionText": "Tell me about a time when you had to lead a team through a difficult technical challenge. What was the situation, and how did you handle it?",
+      "context": "This question helps assess leadership potential and problem-solving abilities in technical contexts.",
+      "expectedDuration": 180,
+      "keywords": ["leadership", "team management", "technical problem-solving", "communication"],
+      "evaluationCriteria": {
+        "content": [
+          "Clear description of the situation",
+          "Specific actions taken to lead the team",
+          "Outcome and results achieved",
+          "Lessons learned from the experience"
+        ],
+        "structure": [
+          "Uses STAR method effectively",
+          "Logical flow of information",
+          "Appropriate level of detail"
+        ],
+        "communication": [
+          "Clear and articulate speech",
+          "Confident tone",
+          "Engaging storytelling"
+        ],
+        "bodyLanguage": [
+          "Maintains eye contact",
+          "Open and confident posture",
+          "Appropriate hand gestures",
+          "Facial expressions match content"
+        ]
+      },
+      "sampleAnswers": [
+        {
+          "quality": "excellent",
+          "answer": "I was leading a team of 5 developers working on a critical bug fix that was causing our production system to crash randomly. The situation was urgent because customers were experiencing downtime. I immediately organized a war room, assigned specific responsibilities to each team member, and set up hourly check-ins. I also communicated the severity to stakeholders and kept them updated on our progress. We worked through the night and identified the root cause - a race condition in our caching layer. I personally took on the most complex part of the fix while coordinating the team's efforts. We deployed the fix within 24 hours and implemented additional monitoring to prevent similar issues. The team appreciated my calm leadership under pressure, and we learned to add better error handling and testing for edge cases.",
+          "analysis": "This answer demonstrates excellent leadership by showing initiative, clear communication, personal accountability, and learning from the experience."
+        }
+      ],
+      "followUpQuestions": [
+        "How did you keep the team motivated during the overnight work?",
+        "What would you do differently if you faced a similar situation?",
+        "How did you ensure the fix didn't introduce new bugs?"
+      ],
+      "redFlags": [
+        "Taking all the credit for the team's work",
+        "Not acknowledging the team's contributions",
+        "Focusing only on technical details without leadership aspects",
+        "Not learning from the experience"
+      ],
+      "tips": [
+        "Use the STAR method: Situation, Task, Action, Result",
+        "Focus on your leadership actions, not just technical details",
+        "Show how you motivated and coordinated the team",
+        "Demonstrate learning and growth from the experience"
+      ],
+      "aiEvaluationPrompts": {
+        "contentAnalysis": "Analyze the candidate's response for completeness of the STAR method, specific leadership actions taken, and demonstration of problem-solving skills.",
+        "bodyLanguageAnalysis": "Evaluate the candidate's confidence, eye contact, posture, and facial expressions throughout their response. Look for signs of nervousness, confidence, or engagement.",
+        "overallAssessment": "Provide an overall assessment of the candidate's leadership potential, communication skills, and technical problem-solving abilities based on both content and presentation."
+      },
+      "tags": ["leadership", "teamwork", "problem-solving", "technical"],
+      "active": true
+    },
+    {
+      "id": "technical_system_design_001",
+      "questionType": "technical",
+      "subType": "system_design",
+      "difficulty": "advanced",
+      "industry": "technology",
+      "role": "senior software engineer",
+      "experienceLevel": "senior",
+      "questionText": "Design a URL shortening service like bit.ly. What are the key components, how would you handle scale, and what trade-offs would you consider?",
+      "context": "This is a classic system design question that tests architectural thinking and understanding of distributed systems.",
+      "expectedDuration": 300,
+      "keywords": ["system architecture", "scalability", "database design", "caching", "load balancing"],
+      "evaluationCriteria": {
+        "content": [
+          "Clear identification of system components",
+          "Understanding of scalability challenges",
+          "Database design considerations",
+          "Caching and performance strategies",
+          "Trade-off analysis"
+        ],
+        "structure": [
+          "Logical flow from requirements to design",
+          "Clear component breakdown",
+          "Systematic approach to problem-solving"
+        ],
+        "communication": [
+          "Clear technical explanations",
+          "Ability to break down complex concepts",
+          "Confident presentation of ideas"
+        ],
+        "bodyLanguage": [
+          "Engaged and enthusiastic about the problem",
+          "Confident posture while discussing technical details",
+          "Appropriate use of gestures to illustrate concepts"
+        ]
+      },
+      "sampleAnswers": [
+        {
+          "quality": "good",
+          "answer": "I'd start by understanding the requirements: shortening URLs, redirecting users, and handling high traffic. The main components would be a web service, URL generation service, database, and redirect service. For scale, I'd use a distributed database like Cassandra, implement caching with Redis, and use load balancers. The trade-offs include consistency vs availability, and I'd choose eventual consistency for better performance.",
+          "analysis": "Good basic understanding but lacks depth in specific technical details and comprehensive trade-off analysis."
+        }
+      ],
+      "followUpQuestions": [
+        "How would you handle URL collisions?",
+        "What's your strategy for the redirect service?",
+        "How would you implement analytics?",
+        "What about security considerations?"
+      ],
+      "redFlags": [
+        "Jumping straight to implementation without understanding requirements",
+        "Not considering scale from the beginning",
+        "Ignoring important non-functional requirements",
+        "Unable to discuss trade-offs"
+      ],
+      "tips": [
+        "Start with clarifying questions about requirements",
+        "Break down the system into logical components",
+        "Consider scale from the beginning",
+        "Always discuss trade-offs and alternatives"
+      ],
+      "aiEvaluationPrompts": {
+        "contentAnalysis": "Evaluate the candidate's system design approach, understanding of scalability, and ability to think through architectural decisions.",
+        "bodyLanguageAnalysis": "Assess the candidate's confidence and engagement while discussing complex technical concepts. Look for signs of deep thinking and enthusiasm.",
+        "overallAssessment": "Provide an assessment of the candidate's system design skills, technical depth, and ability to communicate complex architectural concepts."
+      },
+      "tags": ["system-design", "architecture", "scalability", "distributed-systems"],
+      "active": true
+    },
+    {
+      "id": "situational_crisis_001",
+      "questionType": "situational",
+      "subType": "crisis_management",
+      "difficulty": "intermediate",
+      "industry": "technology",
+      "role": "software engineer",
+      "experienceLevel": "mid",
+      "questionText": "You discover a critical security vulnerability in your production system that could expose customer data. What steps would you take to address this situation?",
+      "context": "This tests the candidate's ability to handle high-pressure situations and make sound decisions under stress.",
+      "expectedDuration": 120,
+      "keywords": ["security", "crisis management", "risk assessment", "communication", "incident response"],
+      "evaluationCriteria": {
+        "content": [
+          "Immediate containment actions",
+          "Risk assessment and prioritization",
+          "Communication plan",
+          "Long-term remediation steps",
+          "Learning and prevention measures"
+        ],
+        "structure": [
+          "Clear priority order of actions",
+          "Logical progression from immediate to long-term",
+          "Comprehensive coverage of all aspects"
+        ],
+        "communication": [
+          "Calm and methodical approach",
+          "Clear articulation of steps",
+          "Professional tone under pressure"
+        ],
+        "bodyLanguage": [
+          "Maintains composure",
+          "Confident but not rushed",
+          "Appropriate seriousness for the topic"
+        ]
+      },
+      "sampleAnswers": [
+        {
+          "quality": "excellent",
+          "answer": "First, I'd immediately assess the scope and potential impact of the vulnerability. I'd then take immediate containment actions like disabling affected services if necessary, while ensuring we don't break critical functionality. I'd immediately notify my manager and the security team, then work with them to develop a communication plan for stakeholders and customers. I'd document everything for post-incident analysis and work on a permanent fix. Finally, I'd ensure we implement measures to prevent similar issues in the future.",
+          "analysis": "Excellent crisis management approach showing systematic thinking, proper escalation, and focus on both immediate and long-term solutions."
+        }
+      ],
+      "followUpQuestions": [
+        "How would you communicate this to customers?",
+        "What if the fix requires downtime?",
+        "How would you handle media inquiries?",
+        "What's your timeline for resolution?"
+      ],
+      "redFlags": [
+        "Panicking or showing signs of stress",
+        "Not considering communication to stakeholders",
+        "Focusing only on technical fix without broader implications",
+        "Not learning from the incident"
+      ],
+      "tips": [
+        "Stay calm and methodical",
+        "Prioritize containment and communication",
+        "Think about stakeholders beyond just technical teams",
+        "Always consider prevention for the future"
+      ],
+      "aiEvaluationPrompts": {
+        "contentAnalysis": "Evaluate the candidate's crisis management approach, prioritization skills, and understanding of security incident response.",
+        "bodyLanguageAnalysis": "Assess how well the candidate maintains composure while discussing a high-pressure situation. Look for signs of stress management.",
+        "overallAssessment": "Provide an assessment of the candidate's crisis management abilities, decision-making under pressure, and professional judgment."
+      },
+      "tags": ["security", "crisis-management", "incident-response", "risk-management"],
+      "active": true
+    }
+  ],
+  "questionTypes": {
+    "behavioral": {
+      "description": "Questions about past behavior and experiences",
+      "subTypes": [
+        "leadership_experience",
+        "conflict_resolution",
+        "teamwork",
+        "achievement",
+        "failure_handling",
+        "change_management",
+        "customer_service",
+        "innovation",
+        "time_management",
+        "stress_management"
+      ],
+      "framework": "STAR"
+    },
+    "technical": {
+      "description": "Questions testing technical knowledge and skills",
+      "subTypes": [
+        "programming",
+        "system_design",
+        "algorithms",
+        "databases",
+        "networking",
+        "security",
+        "cloud_computing",
+        "devops",
+        "data_science",
+        "machine_learning"
+      ]
+    },
+    "situational": {
+      "description": "Hypothetical scenarios to test problem-solving",
+      "subTypes": [
+        "crisis_management",
+        "resource_allocation",
+        "priority_setting",
+        "stakeholder_management",
+        "ethical_dilemmas",
+        "performance_issues",
+        "budget_constraints",
+        "deadline_pressure"
+      ]
+    },
+    "case_study": {
+      "description": "Complex business or technical scenarios to analyze",
+      "subTypes": [
+        "business_strategy",
+        "market_analysis",
+        "product_development",
+        "financial_analysis",
+        "operational_efficiency",
+        "competitive_analysis",
+        "risk_assessment",
+        "growth_strategy"
+      ]
+    },
+    "brain_teaser": {
+      "description": "Logic puzzles and creative thinking problems",
+      "subTypes": [
+        "logic_puzzles",
+        "math_problems",
+        "creative_thinking",
+        "lateral_thinking",
+        "pattern_recognition",
+        "spatial_reasoning",
+        "word_problems",
+        "sequence_analysis"
+      ]
+    },
+    "cultural_fit": {
+      "description": "Questions to assess alignment with company values",
+      "subTypes": [
+        "values_alignment",
+        "work_style",
+        "motivation",
+        "career_goals",
+        "work_life_balance",
+        "company_culture",
+        "team_dynamics",
+        "growth_mindset"
+      ]
+    },
+    "leadership": {
+      "description": "Questions specifically about leadership abilities",
+      "subTypes": [
+        "team_building",
+        "mentoring",
+        "decision_making",
+        "vision_setting",
+        "influence",
+        "delegation",
+        "crisis_leadership",
+        "change_leadership"
+      ]
+    },
+    "problem_solving": {
+      "description": "Questions testing analytical and problem-solving skills",
+      "subTypes": [
+        "root_cause_analysis",
+        "data_analysis",
+        "process_improvement",
+        "optimization",
+        "troubleshooting",
+        "creative_solutions",
+        "risk_mitigation",
+        "quality_assurance"
+      ]
+    },
+    "communication": {
+      "description": "Questions testing communication and presentation skills",
+      "subTypes": [
+        "presentation_skills",
+        "written_communication",
+        "active_listening",
+        "persuasion",
+        "negotiation",
+        "public_speaking",
+        "cross_cultural_communication",
+        "technical_writing"
+      ]
+    },
+    "stress_test": {
+      "description": "Questions designed to test composure under pressure",
+      "subTypes": [
+        "pressure_handling",
+        "rapid_thinking",
+        "emotional_control",
+        "adaptability",
+        "resilience",
+        "grace_under_fire",
+        "quick_decision_making",
+        "maintaining_focus"
+      ]
+    }
+  }
+}
+
