@@ -1,0 +1,4 @@
+gTTS
+opencv-python
+openai-whisper
+ffmpeg
