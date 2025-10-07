@@ -3,7 +3,8 @@
 
 import datetime
 import whisper
-from datetime import datetime
+# from datetime import datetime
+import ffmpeg
 
 # We need to check for the GPU as a future feature
 
@@ -17,7 +18,8 @@ result = model.transcribe(file_path)
 print(result)
 print(result['text'])
 
-timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+# timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 save_target = f"transcription-{timestamp}.vtt"
 
 
